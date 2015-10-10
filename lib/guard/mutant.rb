@@ -8,7 +8,7 @@ module Guard
   # Mutant guard
   class Mutant < Plugin
 
-    PREFIX = %r(\A#{Regexp.union('lib', 'app/models', 'app/controllers')})
+    PREFIX = %r(\A#{Regexp.union('lib/', 'app/models/', 'app/controllers/')})
     SUFFIX = %r(\.rb\z)
     EMPTY_STRING = ''.freeze
 
