@@ -28,7 +28,7 @@ module Guard
       subjects = paths.map do |path|
         Inflecto.camelize(path.sub(PREFIX, EMPTY_STRING).sub(SUFFIX, EMPTY_STRING))
       end
-      status = ::Mutant::CLI.run(%w(--rspec-dm2 --fail-fast) + subjects)
+      status = ::Mutant::CLI.run(%w(--use rspec --fail-fast) + subjects)
       throw :task_has_failed if status.nonzero?
       self
     end
