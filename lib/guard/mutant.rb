@@ -1,12 +1,12 @@
 require 'guard'
-require 'guard/guard'
+require 'guard/compat/plugin'
 
 require 'inflecto'
 require 'mutant'
 
 module Guard
   # Mutant guard
-  class Mutant < Guard
+  class Mutant < Plugin
 
     PREFIX = %r(\A#{Regexp.union('lib', 'app/models', 'app/controllers')})
     SUFFIX = %r(\.rb\z)
